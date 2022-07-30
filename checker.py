@@ -21,6 +21,7 @@ for un in data:
     url = "https://www.instagram.com/"+str(un[:4])
     x = requests.get(url, verify = False)
     if x.headers == 'Location':
+        print("skip - " + un[:4]+ " - "+ str(data.index(un)))
     else:
         print("available - " + un[:4] + " - "+ str(data.index(un)))
         f2 = open("available.txt", "a")
