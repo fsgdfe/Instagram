@@ -17,14 +17,13 @@ data = f.readlines()
 
 
 for un in data:
-    time.sleep(10 * random.random())
-    url = "https://www.instagram.com/"+str(un[:10])
+    time.sleep(4 * random.random())
+    url = "https://www.instagram.com/"+str(un[:4])
     x = requests.get(url, verify = False)
     if x.headers == 'Location':
-        print("skip - " + un[:10]+ " - "+ str(data.index(un)))
     else:
-        print("available - " + un[:10] + " - "+ str(data.index(un)))
-        f2 = open("./available.txt", "a")
+        print("available - " + un[:4] + " - "+ str(data.index(un)))
+        f2 = open("available.txt", "a")
         f2.write(un)
         f2.close()
     if int(data.index(un))%20 == 0:
