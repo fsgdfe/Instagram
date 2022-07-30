@@ -11,7 +11,7 @@ import time
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-f = open("usernames2.csv", "r")
+f = open("usernames.csv", "r")
 data = f.readlines()
 
 
