@@ -24,7 +24,7 @@ for un in data:
         print("skip - " + un[:10]+ " - "+ str(data.index(un)))
     else:
         print("available - " + un[:10] + " - "+ str(data.index(un)))
-        f2 = open("available.txt", "a")
+        f2 = open("./available.txt", "a")
         f2.write(un)
         f2.close()
     if int(data.index(un))%20 == 0:
