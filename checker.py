@@ -20,7 +20,7 @@ for un in data:
     time.sleep(4 * random.random())
     url = "https://www.instagram.com/"+str(un[:4])
     x = requests.get(url, verify = False)
-    if x.headers == 'Location':
+    if 'document-policy' in x.headers:
         print("skip - " + un[:4]+ " - "+ str(data.index(un)))
     else:
         print("available - " + un[:4] + " - "+ str(data.index(un)))
