@@ -11,19 +11,19 @@ import time
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-f = open("usernames.csv", "r")
+f = open("usernames2.csv", "r")
 data = f.readlines()
 
 
 
 for un in data:
-    time.sleep(4 * random.random())
-    url = "https://www.instagram.com/"+str(un[:4])
+    time.sleep(10 * random.random())
+    url = "https://www.instagram.com/"+str(un[:10])
     x = requests.get(url, verify = False)
     if x.headers == 'Location':
-        print("skip - " + un[:4]+ " - "+ str(data.index(un)))
+        print("skip - " + un[:10]+ " - "+ str(data.index(un)))
     else:
-        print("available - " + un[:4] + " - "+ str(data.index(un)))
+        print("available - " + un[:10] + " - "+ str(data.index(un)))
         f2 = open("available.txt", "a")
         f2.write(un)
         f2.close()
